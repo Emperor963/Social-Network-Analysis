@@ -35,8 +35,10 @@ public class Network {
             int columns = Integer.parseInt(line[1].trim());
 
             if(!network.containsKey(columns)) this.network.put(columns, new ArrayList<Connections>());
+            if(!network.containsKey(rows)) this.network.put(rows, new ArrayList<Connections>());
 
             this.network.get(columns).add(new Connections(rows, 1.0));
+            this.network.get(rows).add(new Connections(columns, 1.0));
         }
     }
 
@@ -44,7 +46,7 @@ public class Network {
         return;
     }
 
-    public void node2vecWalk(){
+    public void randomWalk2(int startNode, int length){
         return;
     }
 
